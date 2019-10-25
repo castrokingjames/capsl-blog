@@ -1,0 +1,23 @@
+include ":social"
+include ":di-scope"
+include ":di-module"
+include ":di-viewmodel"
+include ":ui-navigation"
+include ":ui-common"
+include ":ui-mvrx"
+include ":domain"
+include ":data"
+include ":manager"
+include ":data-firebase"
+include ":manager-firebase"
+include ":feature-splash"
+include ":feature-feeds"
+include ":feature-auth"
+include ":feature-post"
+include ":feature-wall"
+
+project(":feature-splash").projectDir = new File("features/splash")
+project(":feature-feeds").projectDir = new File("features/feeds")
+project(":feature-auth").projectDir = new File("features/auth")
+project(":feature-post").projectDir = new File("features/post")
+project(":feature-wall").projectDir = new File("features/wall")

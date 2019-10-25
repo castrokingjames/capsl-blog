@@ -1,0 +1,13 @@
+import cc.capsl.social.*
+
+apply plugin: "kotlin"
+
+sourceSets {
+    main.java.srcDirs += "src/main/kotlin"
+    main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+    test.java.srcDirs += "src/test/kotlin"
+}
+
+dependencies {
+    implementation Libs.Dagger.dagger
+}

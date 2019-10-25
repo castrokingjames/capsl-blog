@@ -1,0 +1,73 @@
+import cc.capsl.social.*
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-android-extensions"
+
+android {
+    compileSdkVersion Config.compile
+
+    defaultConfig {
+        minSdkVersion Config.min
+        targetSdkVersion Config.target
+        versionCode = Config.versionCode
+        versionName = Config.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+        main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+        test.java.srcDirs += "src/test/kotlin"
+        androidTest.java.srcDirs += "src/androidTest/kotlin"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation project(":ui-navigation")
+    implementation project(":ui-mvrx")
+    implementation project(":ui-common")
+    implementation project(":di-scope")
+    implementation project(":di-module")
+    implementation project(":domain")
+    implementation project(":manager")
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.appcompat
+    implementation Libs.AndroidX.constraintlayout
+    implementation Libs.AndroidX.recyclerview
+    implementation Libs.AndroidX.Material.material
+
+    implementation Libs.AndroidX.Navigation.fragment
+    implementation Libs.AndroidX.Navigation.ui
+
+    implementation Libs.Airbnb.Epoxy.epoxy
+    implementation Libs.Airbnb.mvRx
+    kapt Libs.Airbnb.Epoxy.processor
+
+    implementation Libs.Bumptech.glide
+
+    implementation Libs.Dagger.dagger
+    implementation Libs.Dagger.android
+    implementation Libs.Dagger.androidSupport
+    implementation Libs.AssistedInject.annotationDagger2
+
+    kapt Libs.Dagger.compiler
+    kapt Libs.Dagger.androidProcessor
+    kapt Libs.AssistedInject.processorDagger2
+}

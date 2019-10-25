@@ -1,0 +1,26 @@
+import cc.capsl.social.*
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+        jcenter()
+    }
+    dependencies {
+        classpath Libs.Kotlin.gradlePlugin
+        classpath Libs.androidGradlePlugin
+        classpath "com.google.gms:google-services:4.2.0"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        mavenLocal()
+    }
+}

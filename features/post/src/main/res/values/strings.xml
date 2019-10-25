@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_public_post">Create Public Post</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="creating_post">Creating Post</string>
+    <string name="loading_message">Please Wait</string>
+    <string name="post_is_empty">Post is empty</string>
+</resources>

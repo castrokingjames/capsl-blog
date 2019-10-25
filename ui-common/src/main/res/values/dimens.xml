@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="super_small">2dp</dimen>
+    <dimen name="extra_small">4dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="standard">16dp</dimen>
+    <dimen name="large">32dp</dimen>
+    <dimen name="extra_large">56dp</dimen>
+
+</resources>
